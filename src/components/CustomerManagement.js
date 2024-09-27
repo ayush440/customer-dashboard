@@ -74,7 +74,7 @@ const CustomerManagement = () => {
       customer.firstName.toLowerCase().includes(lowerCaseQuery) ||
       customer.lastName.toLowerCase().includes(lowerCaseQuery) ||
       customer.email.toLowerCase().includes(lowerCaseQuery) ||
-      customer.phone.includes(searchQuery) // No need to convert to lower case for phone numbers
+      customer.phone.includes(searchQuery) 
     );
   });
 

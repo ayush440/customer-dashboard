@@ -29,7 +29,7 @@ const CustomerManagement = () => {
     return customers.some(
       (customer) =>
         (customer.email === formData.email || customer.phone === formData.phone) &&
-        customer.id !== formData.id 
+        customer.id !== formData.id // Exclude the current customer being edited
     );
   };
 
@@ -74,11 +74,11 @@ const CustomerManagement = () => {
       customer.firstName.toLowerCase().includes(lowerCaseQuery) ||
       customer.lastName.toLowerCase().includes(lowerCaseQuery) ||
       customer.email.toLowerCase().includes(lowerCaseQuery) ||
-      customer.phone.includes(searchQuery) 
+      customer.phone.includes(searchQuery) // No need to convert to lower case for phone numbers
     );
   });
 
-  
+  // Alert if no customers found after searching
   if (searchQuery && filteredCustomers.length === 0) {
     alert('No Customer Exists');
   }
@@ -87,9 +87,9 @@ const CustomerManagement = () => {
     <div>
       <div className="flex flex-col items-center justify-center p-8">
         <h1 className="text-4xl font-bold mb-8">Customer Dashboard</h1>
-        
+
         {/* Customer Form */}
-        <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg p-6 mb-8">
+        <div className="w-96 bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg p-6 mb-8">
           <input
             type="text"
             name="firstName"
@@ -153,27 +153,27 @@ const CustomerManagement = () => {
         </div>
 
         {/* Customer Details Table */}
-        <table className="min-w-full border-collapse border border-gray-300 text-center">
+        <table className="min-w-full border-collapse border border-gray-300 text-center text-xs sm:text-lg">
           <thead className="bg-gray-200">
             <tr>
-              <th className="px-4 py-2 border border-gray-300">First Name</th>
-              <th className="px-4 py-2 border border-gray-300">Last Name</th>
-              <th className="px-4 py-2 border border-gray-300">Email</th>
-              <th className="px-4 py-2 border border-gray-300">Phone</th>
-              <th className="px-4 py-2 border border-gray-300">City</th>
-              <th className="px-4 py-2 border border-gray-300">Actions</th>
+              <th className="sm:px-4 sm:py-2 border border-gray-300">First Name</th>
+              <th className="sm:px-4 sm:py-2 border border-gray-300">Last Name</th>
+              <th className="sm:px-4 sm:py-2 border border-gray-300">Email</th>
+              <th className="sm:px-4 sm:py-2 border border-gray-300">Phone</th>
+              <th className="sm:px-4 sm:py-2 border border-gray-300">City</th>
+              <th className="sm:px-4 sm:py-2 border border-gray-300">Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredCustomers.length > 0 ? (
               filteredCustomers.map((customer) => (
                 <tr key={customer.id} className="hover:bg-gray-100">
-                  <td className="px-4 py-2 border border-gray-300">{customer.firstName}</td>
-                  <td className="px-4 py-2 border border-gray-300">{customer.lastName}</td>
-                  <td className="px-4 py-2 border border-gray-300">{customer.email}</td>
-                  <td className="px-4 py-2 border border-gray-300">{customer.phone}</td>
-                  <td className="px-4 py-2 border border-gray-300">{customer.city}</td>
-                  <td className="px-4 py-2 border border-gray-300">
+                  <td className="sm:px-4 sm:py-2 border border-gray-300">{customer.firstName}</td>
+                  <td className="sm:px-4 sm:py-2 border border-gray-300">{customer.lastName}</td>
+                  <td className="sm:px-4 sm:py-2 border border-gray-300">{customer.email}</td>
+                  <td className="sm:px-4 sm:py-2 border border-gray-300">{customer.phone}</td>
+                  <td className="sm:px-4 sm:py-2 border border-gray-300">{customer.city}</td>
+                  <td className="sm:px-4 sm:py-2 border border-gray-300">
                     <button
                       className="bg-blue-500 text-white px-4 py-1 rounded-full mr-2"
                       onClick={() => handleEdit(customer)}

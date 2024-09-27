@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="flex">
         <Sidebar />
-        <div className="w-full p-6">
+        <div className="w-full p-6 mt-32 lg:mt-0">
           <Routes>
             <Route path="/" element={<CustomerManagement />} />
             <Route path="/stats" element={<CustomerStats />} />

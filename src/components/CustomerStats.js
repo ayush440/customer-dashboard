@@ -1,5 +1,3 @@
-// CustomerStats.js
-
 import React from 'react';
 import { useSelector } from 'react-redux';
 import dayjs from 'dayjs';

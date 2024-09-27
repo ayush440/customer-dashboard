@@ -29,7 +29,7 @@ const CustomerManagement = () => {
     return customers.some(
       (customer) =>
         (customer.email === formData.email || customer.phone === formData.phone) &&
-        customer.id !== formData.id // Exclude the current customer being edited
+        customer.id !== formData.id 
     );
   };
 
@@ -78,7 +78,7 @@ const CustomerManagement = () => {
     );
   });
 
-  // Alert if no customers found after searching
+  
   if (searchQuery && filteredCustomers.length === 0) {
     alert('No Customer Exists');
   }

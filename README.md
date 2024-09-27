@@ -19,7 +19,7 @@ The **Customer Dashboard** is a React-based web application designed to provide 
   - Redux
   - dayjs
 - **Styling**: 
-  - CSS (with a focus on Glassmorphism)
+  - CSS 
 - **Development Tools**: 
   - Webpack
   - ESLint

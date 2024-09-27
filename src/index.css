@@ -1,13 +1,91 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* index.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+ background: linear-gradient(to right, #ece9e6, #ffffff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  button {
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  input {
+    border: none;
+    padding: 8px 12px;
+    margin: 5px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+/* index.css */
+
+body {
+   
+background: #83A5D2;
+background: radial-gradient(at center, #83A5D2, #BEBBC3);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Ensure no margin on the body */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    color: white; /* White text color for headings */
+  }
+  
+  ul {
+    list-style-type: none; /* Remove bullets from list */
+    padding: 0; /* Remove default padding */
+  }
+  
+  li {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 10px;
+    color: white; /* White text for list items */
+    width: 100%;
+    text-align: center; /* Center text in list items */
+  }
+  
